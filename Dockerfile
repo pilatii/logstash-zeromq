@@ -13,7 +13,8 @@ RUN rpm -Uvh /root/openpgm-5.2.122-2.sdl7.x86_64.rpm && \
 
 RUN logstash-plugin install --no-verify /opt/logstash-mixin-zeromq-4.0.0.gem && \
     logstash-plugin install --no-verify /opt/logstash-input-cloudwatch_logs-1.0.3.gem && \
-    logstash-plugin install logstash-input-zeromq logstash-output-zeromq logstash-output-amazon_es
+    logstash-plugin install logstash-input-zeromq logstash-output-zeromq && \
+    logstash-plugin install --version 6.0.0 logstash-output-amazon_es
 
 RUN yum clean all && \
     rm -rf /var/cache/yum && \
