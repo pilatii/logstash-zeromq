@@ -10,7 +10,7 @@ RUN yum install -y libzmq5 && \
 
 RUN logstash-plugin install --no-verify /opt/logstash-mixin-zeromq-4.0.0.gem && \
     logstash-plugin install --no-verify /opt/logstash-input-cloudwatch_logs-1.0.3.gem && \
-    logstash-plugin install logstash-input-zeromq logstash-output-zeromq
+    logstash-plugin install logstash-input-zeromq logstash-output-zeromq logstash-output-amazon_es
 
 RUN yum clean all && \
     rm -rf /var/cache/yum
